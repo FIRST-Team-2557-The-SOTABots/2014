@@ -22,20 +22,25 @@ public class Network {
         SocketConnection socket;
         DataInput data;
         int seen = -1;
+        //Tries to open a socket to the Pi.
         try{
             socket = (SocketConnection) Connector.open("10.25.57.10:111");
         }
         catch(IOException e){
             System.out.println("Error code 221");
+            //Returns if error occurs.
             return seen;
         }
+        //Tries to open a Data Input Stream from the Pi.
         try{
             data = socket.openDataInputStream();
         }
         catch(IOException e){
             System.out.println("Error code 222");
+            //Returns if error occurs.
             return seen;
         }
+        //Tries to read boolean sent by the Pi.
         try{
             if(data.readBoolean()){
                 seen = 1;
@@ -46,6 +51,7 @@ public class Network {
         }
         catch(IOException e){
             System.out.println("Error code 223");
+            //Returns if error occurrs.
             return -1;
         }
         return seen;
@@ -56,25 +62,31 @@ public class Network {
         SocketConnection socket;
         DataInput data;
         String seen = "-2,-2";
+        //Tries to open a socket to Pi.
         try{
             socket = (SocketConnection) Connector.open("10.25.57.10:111");
         }
         catch(IOException e){
             System.out.println("Error code 221");
+            //Retuns if error occurs.
             return seen;
         }
+        //Tries to open a Data Input Stream to the Pi.
         try{
             data = socket.openDataInputStream();
         }
         catch(IOException e){
             System.out.println("Error code 222");
+            //Returns if error occurs.
             return seen;
         }
+        //Tries to read string sent by the Pi.
         try{
             return data.readUTF();
         }
         catch(IOException e){
             System.out.println("Error code 224");
+            //Returns if error occurs.
             return "-2,-2";
         }
     }
