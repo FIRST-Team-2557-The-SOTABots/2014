@@ -1,14 +1,15 @@
 
 package edu.wpi.first.wpilibj.templates;
 
-import edu.wpi.first.wpilibj.buttons.Button;
-import edu.wpi.first.wpilibj.buttons.DigitalIOButton;
+//import edu.wpi.first.wpilibj.buttons.Button;
+//import edu.wpi.first.wpilibj.buttons.DigitalIOButton;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.DigitalInput;
+import edu.wpi.first.wpilibj.DigitalOutput;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.Timer;
@@ -40,8 +41,13 @@ public class OI {
     Solenoid fireCata = new Solenoid(5); //Defines unlatching catapult arm on Solenoid port 5.
     Solenoid latchCata = new Solenoid(6); //Defines latching catapult arm on Solenoid port 6.
     //Defines digital inputs by jobs.
-    DigitalInput cataLim = new DigitalInput(1); //Defines sensor that detects catapult limit on digtil in port 1.
-    //Have not finished all the DigitalInput ports.
+    DigitalInput cataLim = new DigitalInput(1); //Defines sensor that detects catapult limit on digtal in port 1.
+    //Defines digital ouputs based on jobs.
+    DigitalOutput ledFlash1 = new DigitalOutput(8); //Defines led "place type of flash here" on digital out port 8
+    DigitalOutput ledFlash2 = new DigitalOutput(9); //Defines led "place type of flash here" on digital out port 9
+    DigitalOutput ledFlash3 = new DigitalOutput(10); //Defines led "place type of flash here" on digital out port 10
+    DigitalOutput ledFlash4 = new DigitalOutput(11); //Defines led "place type of flash here" on digital out port 11
+    DigitalOutput ledFlash5 = new DigitalOutput(12); //Defines led "place type of flash here" on digital out port 12
     //Defines SmartDashboard.
     SmartDashboard dash = new SmartDashboard(); //Defines a SmartDashboard as dash for ease of reference.
     //Defines Timer.
@@ -79,4 +85,3 @@ public class OI {
     // until it is finished as determined by it's isFinished method.
     // button.whenReleased(new ExampleCommand());
 }
-
