@@ -1,9 +1,8 @@
 /*
-Error code 221: Socket could not be opened.
-Error code 222: Data stream could not be created.
-Error code 223: Could not read boolean.
-Error code 224: Could not read String.
-*/
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 
 package edu.wpi.first.wpilibj.templates;
 
