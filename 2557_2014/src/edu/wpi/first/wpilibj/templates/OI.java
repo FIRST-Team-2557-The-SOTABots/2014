@@ -20,38 +20,38 @@ import edu.wpi.first.wpilibj.Timer;
  */
 public class OI {
     //Defines left and right joysticks.
-    Joystick leftJoy = new Joystick(RobotMap.leftJoyP); //Defines left joystick.
-    Joystick rightJoy = new Joystick(RobotMap.rightJoyP); //Defines right joystick.
+    static Joystick leftJoy = new Joystick(RobotMap.leftJoyP); //Defines left joystick.
+    static Joystick rightJoy = new Joystick(RobotMap.rightJoyP); //Defines right joystick.
     //Defines the drive motors.
-    RobotDrive drive = new RobotDrive(RobotMap.leftDriveMP,RobotMap.rightDriveMP); //Defines left and right driving motors.
+    static RobotDrive drive = new RobotDrive(RobotMap.leftDriveMP,RobotMap.rightDriveMP); //Defines left and right driving motors.
     //Defines Talon by their jobs.
-    Talon intakeM = new Talon(RobotMap.intakeMP); //Defines ball pickup motor.
-    Talon winchM = new Talon(RobotMap.winchMP); //Defines winch motor.
+    static Talon intakeM = new Talon(RobotMap.intakeMP); //Defines ball pickup motor.
+    static Talon winchM = new Talon(RobotMap.winchMP); //Defines winch motor.
     //Defines encoders by what motor they are connected to.
-    Encoder winchEn = new Encoder(RobotMap.winchEnAP,RobotMap.winchEnBP); //Defines winch encoder.
-    Encoder leftDriveEn = new Encoder(RobotMap.leftEnAP,RobotMap.leftEnBP); //Defines left drive encoders.
-    Encoder rightDriveEn = new Encoder(RobotMap.rightEnAP,RobotMap.rightEnBP); //Defines right drive encoders.
+    static Encoder winchEn = new Encoder(RobotMap.winchEnAP,RobotMap.winchEnBP); //Defines winch encoder.
+    static Encoder leftDriveEn = new Encoder(RobotMap.leftEnAP,RobotMap.leftEnBP); //Defines left drive encoders.
+    static Encoder rightDriveEn = new Encoder(RobotMap.rightEnAP,RobotMap.rightEnBP); //Defines right drive encoders.
     //Defines Compressor.
-    Compressor compress = new Compressor(RobotMap.compressorAP,RobotMap.compressorBP);//Defines the compressor as compressor.
+    static Compressor compress = new Compressor(RobotMap.compressorAP,RobotMap.compressorBP);//Defines the compressor as compressor.
     //Defines solenoids of the pneumatics by their jobs.
-    Solenoid intakeUp = new Solenoid(RobotMap.intakeUpP); //Defines intake arm moving up.
-    Solenoid intakeDown = new Solenoid(RobotMap.intakeDownP); //Defines intake arm moving down.
-    Solenoid unShift = new Solenoid(RobotMap.unshiftP); //Defines unshift gears on supershift.
-    Solenoid shift = new Solenoid(RobotMap.shiftP); //Defines shift gears on supershifter.
-    Solenoid fireCata = new Solenoid(RobotMap.unlatchedP); //Defines unlatching catapult arm.
-    Solenoid latchCata = new Solenoid(RobotMap.latchedP); //Defines latching catapult arm.
+    static Solenoid intakeUp = new Solenoid(RobotMap.intakeUpP); //Defines intake arm moving up.
+    static Solenoid intakeDown = new Solenoid(RobotMap.intakeDownP); //Defines intake arm moving down.
+    static Solenoid unShift = new Solenoid(RobotMap.unshiftP); //Defines unshift gears on supershift.
+    static Solenoid shift = new Solenoid(RobotMap.shiftP); //Defines shift gears on supershifter.
+    static Solenoid fireCata = new Solenoid(RobotMap.unlatchedP); //Defines unlatching catapult arm.
+    static Solenoid latchCata = new Solenoid(RobotMap.latchedP); //Defines latching catapult arm.
     //Defines digital inputs by jobs.
-    DigitalInput cataLim = new DigitalInput(RobotMap.cataLimP); //Defines sensor that detects catapult limit.
+    static DigitalInput cataLim = new DigitalInput(RobotMap.cataLimP); //Defines sensor that detects catapult limit.
     //Defines digital ouputs based on jobs.
-    DigitalOutput ledFlash1 = new DigitalOutput(RobotMap.ledFlash1P); //Defines led "place type of flash here".
-    DigitalOutput ledFlash2 = new DigitalOutput(RobotMap.ledFlash2P); //Defines led "place type of flash here".
-    DigitalOutput ledFlash3 = new DigitalOutput(RobotMap.ledFlash3P); //Defines led "place type of flash here".
-    DigitalOutput ledFlash4 = new DigitalOutput(RobotMap.ledFlash4P); //Defines led "place type of flash here".
-    DigitalOutput ledFlash5 = new DigitalOutput(RobotMap.ledFlash5P); //Defines led "place type of flash here".
+    static DigitalOutput ledFlash1 = new DigitalOutput(RobotMap.ledFlash1P); //Defines led "place type of flash here".
+    static DigitalOutput ledFlash2 = new DigitalOutput(RobotMap.ledFlash2P); //Defines led "place type of flash here".
+    static DigitalOutput ledFlash3 = new DigitalOutput(RobotMap.ledFlash3P); //Defines led "place type of flash here".
+    static DigitalOutput ledFlash4 = new DigitalOutput(RobotMap.ledFlash4P); //Defines led "place type of flash here".
+    static DigitalOutput ledFlash5 = new DigitalOutput(RobotMap.ledFlash5P); //Defines led "place type of flash here".
     //Defines SmartDashboard.
-    SmartDashboard dash = new SmartDashboard(); //Defines a SmartDashboard as dash for ease of reference.
+    static SmartDashboard dash = new SmartDashboard(); //Defines a SmartDashboard as dash for ease of reference.
     //Defines Timer.
-    Timer timer = new Timer(); //Defines a Timer as timer for ease of reference.
+    static Timer timer = new Timer(); //Defines a Timer as timer for ease of reference.
     
     //// CREATING BUTTONS
     // One type of button is a joystick button which is any button on a joystick.
