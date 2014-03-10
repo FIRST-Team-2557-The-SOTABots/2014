@@ -20,34 +20,34 @@ import edu.wpi.first.wpilibj.Timer;
  */
 public class OI {
     //Defines left and right joysticks.
-    Joystick leftJoy = new Joystick(1); //Defines left joystick on port 1.
-    Joystick rightJoy = new Joystick(2); //Defines right joystick on port 2.
+    Joystick leftJoy = new Joystick(RobotMap.leftJoyP); //Defines left joystick.
+    Joystick rightJoy = new Joystick(RobotMap.rightJoyP); //Defines right joystick.
     //Defines the drive motors.
-    RobotDrive drive = new RobotDrive(1,2); //Defines talons on port 1 and 2 as the left and right driving motors.
+    RobotDrive drive = new RobotDrive(RobotMap.leftDriveMP,RobotMap.rightDriveMP); //Defines left and right driving motors.
     //Defines Talon by their jobs.
-    Talon intakeM = new Talon(3); //Defines ball pickup motor on Talon port 3.
-    Talon winchM = new Talon(4); //Defines winch motor on Talon port 4.
+    Talon intakeM = new Talon(RobotMap.intakeMP); //Defines ball pickup motor.
+    Talon winchM = new Talon(RobotMap.winchMP); //Defines winch motor.
     //Defines encoders by what motor they are connected to.
-    Encoder winchEn = new Encoder(6,7); //Defines winch encoder on digital in ports 6 and 7.
-    Encoder leftDriveEn = new Encoder(2,3); //Defines left drive encoders on digital ports 2 and 3.
-    Encoder rightDriveEn = new Encoder(4,5); //Defines right drive encoders on digital ports 4 and 5.
+    Encoder winchEn = new Encoder(RobotMap.winchEnAP,RobotMap.winchEnBP); //Defines winch encoder.
+    Encoder leftDriveEn = new Encoder(RobotMap.leftEnAP,RobotMap.leftEnBP); //Defines left drive encoders.
+    Encoder rightDriveEn = new Encoder(RobotMap.rightEnAP,RobotMap.rightEnBP); //Defines right drive encoders.
     //Defines Compressor.
-    Compressor compress = new Compressor(14,1);//Defines the compressor as compressor.
+    Compressor compress = new Compressor(RobotMap.compressorAP,RobotMap.compressorBP);//Defines the compressor as compressor.
     //Defines solenoids of the pneumatics by their jobs.
-    Solenoid intakeUp = new Solenoid(1); //Defines intake arm moving up on Solenoid port 1.
-    Solenoid intakeDown = new Solenoid(2); //Defines intake arm moving down on Solenoid port 2.
-    Solenoid unShift = new Solenoid(3); //Defines unshift gears on supershift on Solenoid port 3.
-    Solenoid shift = new Solenoid(4); //Defines shift gears on supershifter on Solenoid port 4.
-    Solenoid fireCata = new Solenoid(5); //Defines unlatching catapult arm on Solenoid port 5.
-    Solenoid latchCata = new Solenoid(6); //Defines latching catapult arm on Solenoid port 6.
+    Solenoid intakeUp = new Solenoid(RobotMap.intakeUpP); //Defines intake arm moving up.
+    Solenoid intakeDown = new Solenoid(RobotMap.intakeDownP); //Defines intake arm moving down.
+    Solenoid unShift = new Solenoid(RobotMap.unshiftP); //Defines unshift gears on supershift.
+    Solenoid shift = new Solenoid(RobotMap.shiftP); //Defines shift gears on supershifter.
+    Solenoid fireCata = new Solenoid(RobotMap.unlatchedP); //Defines unlatching catapult arm.
+    Solenoid latchCata = new Solenoid(RobotMap.latchedP); //Defines latching catapult arm.
     //Defines digital inputs by jobs.
-    DigitalInput cataLim = new DigitalInput(1); //Defines sensor that detects catapult limit on digtal in port 1.
+    DigitalInput cataLim = new DigitalInput(RobotMap.cataLimP); //Defines sensor that detects catapult limit.
     //Defines digital ouputs based on jobs.
-    DigitalOutput ledFlash1 = new DigitalOutput(8); //Defines led "place type of flash here" on digital out port 8
-    DigitalOutput ledFlash2 = new DigitalOutput(9); //Defines led "place type of flash here" on digital out port 9
-    DigitalOutput ledFlash3 = new DigitalOutput(10); //Defines led "place type of flash here" on digital out port 10
-    DigitalOutput ledFlash4 = new DigitalOutput(11); //Defines led "place type of flash here" on digital out port 11
-    DigitalOutput ledFlash5 = new DigitalOutput(12); //Defines led "place type of flash here" on digital out port 12
+    DigitalOutput ledFlash1 = new DigitalOutput(8); //Defines led "place type of flash here".
+    DigitalOutput ledFlash2 = new DigitalOutput(9); //Defines led "place type of flash here".
+    DigitalOutput ledFlash3 = new DigitalOutput(10); //Defines led "place type of flash here".
+    DigitalOutput ledFlash4 = new DigitalOutput(11); //Defines led "place type of flash here".
+    DigitalOutput ledFlash5 = new DigitalOutput(12); //Defines led "place type of flash here".
     //Defines SmartDashboard.
     SmartDashboard dash = new SmartDashboard(); //Defines a SmartDashboard as dash for ease of reference.
     //Defines Timer.
