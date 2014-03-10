@@ -16,7 +16,7 @@ import javax.microedition.io.SocketConnection;
  * @author SOTA
  */
 public class Network {
-    public int listenbool(){
+    public static int listenBool(){
         //If error occurs returns value -1
         //If no error occurs returns 1(true) or 0(false)
         SocketConnection socket;
@@ -50,7 +50,7 @@ public class Network {
         }
         return seen;
     }
-    public String listenCoor(){
+    public static String listenCoor(){
         //If error ocurrs returns value "-2,-2"
         //If no error occurs returns "x,y" or "-1,-1" if nothing found
         SocketConnection socket;
