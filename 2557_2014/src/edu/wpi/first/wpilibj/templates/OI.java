@@ -43,11 +43,11 @@ public class OI {
     //Defines digital inputs by jobs.
     DigitalInput cataLim = new DigitalInput(RobotMap.cataLimP); //Defines sensor that detects catapult limit.
     //Defines digital ouputs based on jobs.
-    DigitalOutput ledFlash1 = new DigitalOutput(8); //Defines led "place type of flash here".
-    DigitalOutput ledFlash2 = new DigitalOutput(9); //Defines led "place type of flash here".
-    DigitalOutput ledFlash3 = new DigitalOutput(10); //Defines led "place type of flash here".
-    DigitalOutput ledFlash4 = new DigitalOutput(11); //Defines led "place type of flash here".
-    DigitalOutput ledFlash5 = new DigitalOutput(12); //Defines led "place type of flash here".
+    DigitalOutput ledFlash1 = new DigitalOutput(RobotMap.ledFlash1P); //Defines led "place type of flash here".
+    DigitalOutput ledFlash2 = new DigitalOutput(RobotMap.ledFlash2P); //Defines led "place type of flash here".
+    DigitalOutput ledFlash3 = new DigitalOutput(RobotMap.ledFlash3P); //Defines led "place type of flash here".
+    DigitalOutput ledFlash4 = new DigitalOutput(RobotMap.ledFlash4P); //Defines led "place type of flash here".
+    DigitalOutput ledFlash5 = new DigitalOutput(RobotMap.ledFlash5P); //Defines led "place type of flash here".
     //Defines SmartDashboard.
     SmartDashboard dash = new SmartDashboard(); //Defines a SmartDashboard as dash for ease of reference.
     //Defines Timer.

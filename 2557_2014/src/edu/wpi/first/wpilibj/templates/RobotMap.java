@@ -38,5 +38,12 @@ public class RobotMap {
     public static final int rightEnBP = 5; //Defines right drive encoder B port.
     public static final int winchEnAP = 6; //Defines winch encoder A port.
     public static final int winchEnBP = 7; //Defines winch encoder B port.
+    //Defines the Digital Output Ports
+    public static final int ledFlash1P = 8;
+    public static final int ledFlash2P = 9;
+    public static final int ledFlash3P = 10;
+    public static final int ledFlash4P = 11;
+    public static final int ledFlash5P = 12;
+    
     
 }
