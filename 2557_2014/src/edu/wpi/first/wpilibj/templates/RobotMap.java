@@ -7,6 +7,7 @@ package edu.wpi.first.wpilibj.templates;
  * floating around.
  */
 public class RobotMap {
+    //Keeps track of the ports.
     //P = port, M = motor, En = encoder.
     //If port is zero port is not defined.
     //Defines Joysticks.
@@ -44,6 +45,5 @@ public class RobotMap {
     public static final int ledFlash3P = 10;
     public static final int ledFlash4P = 11;
     public static final int ledFlash5P = 12;
-    
     
 }

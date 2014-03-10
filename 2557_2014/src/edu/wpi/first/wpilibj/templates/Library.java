@@ -22,33 +22,33 @@ import edu.wpi.first.wpilibj.Timer;
  */
 public class Library {
     //Defines the drive motors.
-    static RobotDrive drive = new RobotDrive(RobotMap.leftDriveMP,RobotMap.rightDriveMP); //Defines left and right driving motors.
+    protected static RobotDrive drive = new RobotDrive(RobotMap.leftDriveMP,RobotMap.rightDriveMP); //Defines left and right driving motors.
     //Defines Talon by their jobs.
-    static Talon intakeM = new Talon(RobotMap.intakeMP); //Defines ball pickup motor.
-    static Talon winchM = new Talon(RobotMap.winchMP); //Defines winch motor.
+    protected static Talon intakeM = new Talon(RobotMap.intakeMP); //Defines ball pickup motor.
+    protected static Talon winchM = new Talon(RobotMap.winchMP); //Defines winch motor.
     //Defines encoders by what motor they are connected to.
-    static Encoder winchEn = new Encoder(RobotMap.winchEnAP,RobotMap.winchEnBP); //Defines winch encoder.
-    static Encoder leftDriveEn = new Encoder(RobotMap.leftEnAP,RobotMap.leftEnBP); //Defines left drive encoders.
-    static Encoder rightDriveEn = new Encoder(RobotMap.rightEnAP,RobotMap.rightEnBP); //Defines right drive encoders.
+    protected static Encoder winchEn = new Encoder(RobotMap.winchEnAP,RobotMap.winchEnBP); //Defines winch encoder.
+    protected static Encoder leftDriveEn = new Encoder(RobotMap.leftEnAP,RobotMap.leftEnBP); //Defines left drive encoders.
+    protected static Encoder rightDriveEn = new Encoder(RobotMap.rightEnAP,RobotMap.rightEnBP); //Defines right drive encoders.
     //Defines Compressor.
-    static Compressor compress = new Compressor(RobotMap.compressorAP,RobotMap.compressorBP);//Defines the compressor as compressor.
+    protected static Compressor compress = new Compressor(RobotMap.compressorAP,RobotMap.compressorBP);//Defines the compressor as compressor.
     //Defines solenoids of the pneumatics by their jobs.
-    static Solenoid intakeUp = new Solenoid(RobotMap.intakeUpP); //Defines intake arm moving up.
-    static Solenoid intakeDown = new Solenoid(RobotMap.intakeDownP); //Defines intake arm moving down.
-    static Solenoid unShift = new Solenoid(RobotMap.unshiftP); //Defines unshift gears on supershift.
-    static Solenoid shift = new Solenoid(RobotMap.shiftP); //Defines shift gears on supershifter.
-    static Solenoid fireCata = new Solenoid(RobotMap.unlatchedP); //Defines unlatching catapult arm.
-    static Solenoid latchCata = new Solenoid(RobotMap.latchedP); //Defines latching catapult arm.
+    protected static Solenoid intakeUp = new Solenoid(RobotMap.intakeUpP); //Defines intake arm moving up.
+    protected static Solenoid intakeDown = new Solenoid(RobotMap.intakeDownP); //Defines intake arm moving down.
+    protected static Solenoid unShift = new Solenoid(RobotMap.unshiftP); //Defines unshift gears on supershift.
+    protected static Solenoid shift = new Solenoid(RobotMap.shiftP); //Defines shift gears on supershifter.
+    protected static Solenoid fireCata = new Solenoid(RobotMap.unlatchedP); //Defines unlatching catapult arm.
+    protected static Solenoid latchCata = new Solenoid(RobotMap.latchedP); //Defines latching catapult arm.
     //Defines digital inputs by jobs.
-    static DigitalInput cataLim = new DigitalInput(RobotMap.cataLimP); //Defines sensor that detects catapult limit.
+    protected static DigitalInput cataLim = new DigitalInput(RobotMap.cataLimP); //Defines sensor that detects catapult limit.
     //Defines digital ouputs based on jobs.
-    static DigitalOutput ledFlash1 = new DigitalOutput(RobotMap.ledFlash1P); //Defines led "place type of flash here".
-    static DigitalOutput ledFlash2 = new DigitalOutput(RobotMap.ledFlash2P); //Defines led "place type of flash here".
-    static DigitalOutput ledFlash3 = new DigitalOutput(RobotMap.ledFlash3P); //Defines led "place type of flash here".
-    static DigitalOutput ledFlash4 = new DigitalOutput(RobotMap.ledFlash4P); //Defines led "place type of flash here".
-    static DigitalOutput ledFlash5 = new DigitalOutput(RobotMap.ledFlash5P); //Defines led "place type of flash here".
+    protected static DigitalOutput ledFlash1 = new DigitalOutput(RobotMap.ledFlash1P); //Defines led "place type of flash here".
+    protected static DigitalOutput ledFlash2 = new DigitalOutput(RobotMap.ledFlash2P); //Defines led "place type of flash here".
+    protected static DigitalOutput ledFlash3 = new DigitalOutput(RobotMap.ledFlash3P); //Defines led "place type of flash here".
+    protected static DigitalOutput ledFlash4 = new DigitalOutput(RobotMap.ledFlash4P); //Defines led "place type of flash here".
+    protected static DigitalOutput ledFlash5 = new DigitalOutput(RobotMap.ledFlash5P); //Defines led "place type of flash here".
     //Defines SmartDashboard.
-    static SmartDashboard dash = new SmartDashboard(); //Defines a SmartDashboard as dash for ease of reference.
+    protected static SmartDashboard dash = new SmartDashboard(); //Defines a SmartDashboard as dash for ease of reference.
     //Defines Timer.
-    static Timer timer = new Timer(); //Defines a Timer as timer for ease of reference.
+    protected static Timer timer = new Timer(); //Defines a Timer as timer for ease of reference.
 }
