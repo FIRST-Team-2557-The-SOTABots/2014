@@ -22,23 +22,23 @@ import edu.wpi.first.wpilibj.Timer;
  */
 public class Library {
     //Defines the drive motors.
-    static RobotDrive drive = new RobotDrive(RobotMap.leftDriveMP,RobotMap.rightDriveMP); //Defines left and right driving motors.
+    public static RobotDrive drive = new RobotDrive(RobotMap.leftDriveMP,RobotMap.rightDriveMP); //Defines left and right driving motors.
     //Defines Talon by their jobs.
-    static Talon intakeM = new Talon(RobotMap.intakeMP); //Defines ball pickup motor.
-    static Talon winchM = new Talon(RobotMap.winchMP); //Defines winch motor.
+    public static Talon intakeM = new Talon(RobotMap.intakeMP); //Defines ball pickup motor.
+    public static Talon winchM = new Talon(RobotMap.winchMP); //Defines winch motor.
     //Defines encoders by what motor they are connected to.
-    static Encoder winchEn = new Encoder(RobotMap.winchEnAP,RobotMap.winchEnBP); //Defines winch encoder.
-    static Encoder leftDriveEn = new Encoder(RobotMap.leftEnAP,RobotMap.leftEnBP); //Defines left drive encoders.
-    static Encoder rightDriveEn = new Encoder(RobotMap.rightEnAP,RobotMap.rightEnBP); //Defines right drive encoders.
+    public static Encoder winchEn = new Encoder(RobotMap.winchEnAP,RobotMap.winchEnBP); //Defines winch encoder.
+    public static Encoder leftDriveEn = new Encoder(RobotMap.leftEnAP,RobotMap.leftEnBP); //Defines left drive encoders.
+    public static Encoder rightDriveEn = new Encoder(RobotMap.rightEnAP,RobotMap.rightEnBP); //Defines right drive encoders.
     //Defines Compressor.
     static Compressor compress = new Compressor(RobotMap.compressorAP,RobotMap.compressorBP);//Defines the compressor as compressor.
     //Defines solenoids of the pneumatics by their jobs.
-    static Solenoid intakeUp = new Solenoid(RobotMap.intakeUpP); //Defines intake arm moving up.
-    static Solenoid intakeDown = new Solenoid(RobotMap.intakeDownP); //Defines intake arm moving down.
-    static Solenoid unShift = new Solenoid(RobotMap.unshiftP); //Defines unshift gears on supershift.
-    static Solenoid shift = new Solenoid(RobotMap.shiftP); //Defines shift gears on supershifter.
-    static Solenoid fireCata = new Solenoid(RobotMap.unlatchedP); //Defines unlatching catapult arm.
-    static Solenoid latchCata = new Solenoid(RobotMap.latchedP); //Defines latching catapult arm.
+    public static Solenoid intakeUp = new Solenoid(RobotMap.intakeUpP); //Defines intake arm moving up.
+    public static Solenoid intakeDown = new Solenoid(RobotMap.intakeDownP); //Defines intake arm moving down.
+    public static Solenoid unShift = new Solenoid(RobotMap.unshiftP); //Defines unshift gears on supershift.
+    public static Solenoid shift = new Solenoid(RobotMap.shiftP); //Defines shift gears on supershifter.
+    public static Solenoid fireCata = new Solenoid(RobotMap.unlatchedP); //Defines unlatching catapult arm.
+    public static Solenoid latchCata = new Solenoid(RobotMap.latchedP); //Defines latching catapult arm.
     //Defines digital inputs by jobs.
     static DigitalInput cataLim = new DigitalInput(RobotMap.cataLimP); //Defines sensor that detects catapult limit.
     //Defines digital ouputs based on jobs.
@@ -50,5 +50,5 @@ public class Library {
     //Defines SmartDashboard.
     static SmartDashboard dash = new SmartDashboard(); //Defines a SmartDashboard as dash for ease of reference.
     //Defines Timer.
-    static Timer timer = new Timer(); //Defines a Timer as timer for ease of reference.
+    public static Timer timer = new Timer(); //Defines a Timer as timer for ease of reference.
 }
