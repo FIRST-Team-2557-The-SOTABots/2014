@@ -33,7 +33,7 @@ public class RobotTemplate extends IterativeRobot {
     public void robotInit() {
         // instantiate the command used for the autonomous period
         autonomousCommand = new ExampleCommand();
-        RobotParts.compress.start();
+        RobotParts.compressor.start();
 
         // Initialize all subsystems
         CommandBase.init();
@@ -57,7 +57,7 @@ public class RobotTemplate extends IterativeRobot {
         // continue until interrupted by another command, remove
         // this line or comment it out.
         autonomousCommand.cancel();
-        RobotParts.compress.start();
+        RobotParts.compressor.start();
     }
 
     /**
