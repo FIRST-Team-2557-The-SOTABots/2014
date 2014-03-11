@@ -25,13 +25,13 @@ public class Shift extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        RobotParts.shift.set(shift); //Makes shift Solenoid turn on or off dependent upon what was given.
-        RobotParts.unShift.set(!shift); //Makes the unshift Solenoid do the opposite of the shift Solenoid.
+        RobotParts.shiftSol.set(shift); //Makes shift Solenoid turn on or off dependent upon what was given.
+        RobotParts.unShiftSol.set(!shift); //Makes the unshift Solenoid do the opposite of the shift Solenoid.
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+        return true;
     }
 
     // Called once after isFinished returns true
