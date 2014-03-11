@@ -5,7 +5,7 @@
  */
 package edu.wpi.first.wpilibj.templates.commands;
 
-import edu.wpi.first.wpilibj.templates.Library;
+import edu.wpi.first.wpilibj.templates.RobotParts;
 
 /**
  *
@@ -25,8 +25,8 @@ public class Shift extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        Library.shift.set(shift); //Makes shift Solenoid turn on or off dependent upon what was given.
-        Library.unShift.set(!shift); //Makes the unshift Solenoid do the opposite of the shift Solenoid.
+        RobotParts.shift.set(shift); //Makes shift Solenoid turn on or off dependent upon what was given.
+        RobotParts.unShift.set(!shift); //Makes the unshift Solenoid do the opposite of the shift Solenoid.
     }
 
     // Make this return true when this Command no longer needs to run execute()
