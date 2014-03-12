@@ -45,7 +45,7 @@ public class RobotParts {
     public static Solenoid latchCataSol = new Solenoid(RobotMap.latchedP); //Defines latching catapult arm.
     
 //Defines digital inputs by jobs.
-    static DigitalInput cataLimIn = new DigitalInput(RobotMap.cataLimP); //Defines sensor that detects catapult limit.
+    public static DigitalInput cataLimIn = new DigitalInput(RobotMap.cataLimP); //Defines sensor that detects catapult limit.
     
 //Defines digital ouputs based on jobs.
     static DigitalOutput ledYlwOut = new DigitalOutput(RobotMap.ledFlash1P); //Defines led Yellow.
