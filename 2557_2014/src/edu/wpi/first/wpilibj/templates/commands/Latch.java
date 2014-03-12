@@ -9,25 +9,26 @@ import edu.wpi.first.wpilibj.templates.RobotParts;
 
 /**
  *
- * @author SOTA
+ * @author Antonio
  */
-public class Shift extends CommandBase {
-    boolean shift = false;
-    public Shift(boolean shift) {
-        this.shift = shift;
+public class Latch extends CommandBase {
+    boolean latch = false;
+    public Latch(boolean latch) {
+       this.latch = latch;
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-    }
+       }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-        
+        RobotParts.compressor.start();
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        RobotParts.shiftSol.set(shift); //Makes shift Solenoid turn on or off dependent upon what was given.
-        RobotParts.unShiftSol.set(!shift); //Makes the unshift Solenoid do the opposite of the shift Solenoid.
+    RobotParts.latchCataSol.set(latch);
+    RobotParts.fireCataSol.set(!latch);
+    
     }
 
     // Make this return true when this Command no longer needs to run execute()

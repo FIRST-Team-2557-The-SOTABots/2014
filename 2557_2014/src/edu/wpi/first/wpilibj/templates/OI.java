@@ -16,7 +16,8 @@ public class OI {
     //Defines left and right joysticks.
     static Joystick leftJoy = new Joystick(RobotMap.leftJoyP); //Defines left joystick.
     static Joystick rightJoy = new Joystick(RobotMap.rightJoyP); //Defines right joystick.
-    //Defines the left joystick buttons.
+   
+//Defines the left joystick buttons.
     Button buttonL1 = new JoystickButton(leftJoy, 1); //Defines left joystick button 1
     Button buttonL2 = new JoystickButton(leftJoy, 2); //Defines left joystick button 2
     Button buttonL3 = new JoystickButton(leftJoy, 3); //Defines left joystick button 3
@@ -29,6 +30,9 @@ public class OI {
     Button buttonL10 = new JoystickButton(leftJoy, 10); //Defines left joystick button 10
     Button buttonL11 = new JoystickButton(leftJoy, 11); //Defines left joystick button 11
     Button buttonL12 = new JoystickButton(leftJoy, 12); //Defines left joystick button 12
+   
+//R = Right
+//Defines the right Joystick buttons
     Button buttonR1 = new JoystickButton(rightJoy, 1); //Defines right joystick button 1
     Button buttonR2 = new JoystickButton(rightJoy, 2); //Defines right joystick button 2
     Button buttonR3 = new JoystickButton(rightJoy, 3); //Defines right joystick button 3
