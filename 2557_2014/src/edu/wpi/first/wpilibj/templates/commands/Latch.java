@@ -26,8 +26,8 @@ public class Latch extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    RobotParts.latchCataSol.set(latch);
-    RobotParts.fireCataSol.set(!latch);
+        RobotParts.latchCataSol.set(latch);
+        RobotParts.fireCataSol.set(!latch);
     
     }
 
