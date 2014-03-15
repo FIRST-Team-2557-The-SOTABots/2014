@@ -12,8 +12,11 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+import edu.wpi.first.wpilibj.templates.commands.ArmLights;
 import edu.wpi.first.wpilibj.templates.commands.CommandBase;
 import edu.wpi.first.wpilibj.templates.commands.ExampleCommand;
+import edu.wpi.first.wpilibj.templates.commands.Latch;
+import edu.wpi.first.wpilibj.templates.commands.Winch;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -25,6 +28,14 @@ import edu.wpi.first.wpilibj.templates.commands.ExampleCommand;
 public class RobotTemplate extends IterativeRobot {
 
     Command autonomousCommand;
+    double winchVal = 1.0;
+    Command winchCom = new Winch(winchVal); //Command that latchs the 
+    Command fireCataCom = new Latch(false); //Command that fires catapult.
+    Command ledYlwCom = new ArmLights(1);
+    Command ledBluCom = new ArmLights(2);
+    Command ledRedCom = new ArmLights(3);
+    Command ledMurica = new ArmLights(4);
+    Command ledGroovy = new ArmLights(5);
 
     /**
      * This function is run when the robot is first started up and should be
@@ -37,6 +48,16 @@ public class RobotTemplate extends IterativeRobot {
 
         // Initialize all subsystems
         CommandBase.init();
+    }
+    
+    public void disableInit(){
+        winchCom.cancel(); //Ends winch command if it is going.
+        RobotParts.drive.stopMotor(); //Stops the drive.
+        RobotParts.winchM.stopMotor();//Stops the winch.
+        RobotParts.intakeM.stopMotor();//Stops the intake motor.
+        //fireCataCom.start(); //Would turn on for competitions to get rid of balls.
+        RobotParts.compressor.stop(); //Turns off the compressor.
+        
     }
 
     public void autonomousInit() {
