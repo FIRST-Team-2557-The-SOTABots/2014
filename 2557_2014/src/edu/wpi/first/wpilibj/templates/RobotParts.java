@@ -48,11 +48,11 @@ public class RobotParts {
     public static DigitalInput cataLimIn = new DigitalInput(RobotMap.cataLimP); //Defines sensor that detects catapult limit.
     
 //Defines digital ouputs based on jobs.
-    static DigitalOutput ledYlwOut = new DigitalOutput(RobotMap.ledFlash1P); //Defines led Yellow.
-    static DigitalOutput ledBluOut = new DigitalOutput(RobotMap.ledFlash2P); //Defines led Blue.
-    static DigitalOutput ledRedOut = new DigitalOutput(RobotMap.ledFlash3P); //Defines led Red.
-    static DigitalOutput ledMuricaOut = new DigitalOutput(RobotMap.ledFlash4P); //Defines led Murica.
-    static DigitalOutput ledGroovyOut = new DigitalOutput(RobotMap.ledFlash5P); //Defines led Groovy.
+    public static DigitalOutput ledYlwOut = new DigitalOutput(RobotMap.ledFlash1P); //Defines led Yellow.
+    public static DigitalOutput ledBluOut = new DigitalOutput(RobotMap.ledFlash2P); //Defines led Blue.
+    public static DigitalOutput ledRedOut = new DigitalOutput(RobotMap.ledFlash3P); //Defines led Red.
+    public static DigitalOutput ledMuricaOut = new DigitalOutput(RobotMap.ledFlash4P); //Defines led Murica.
+    public static DigitalOutput ledGroovyOut = new DigitalOutput(RobotMap.ledFlash5P); //Defines led Groovy.
     
 //Defines SmartDashboard.
     static SmartDashboard driveStation = new SmartDashboard(); //Defines a SmartDashboard as dash for ease of reference.
