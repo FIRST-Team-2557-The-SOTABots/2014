@@ -15,6 +15,7 @@ public class Winch extends CommandBase {
     
     Command latch = new Latch(true);
     double winch = 0;
+    boolean done = false;
     public Winch(double winch) {
         this.winch = winch;
     }
@@ -26,9 +27,11 @@ public class Winch extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+        //Waits for the winch to get to 510 ticks and the limit switch to trigger.
         if(RobotParts.winchEn.get() >= 510 && RobotParts.cataLimIn.get()){
-            RobotParts.winchM.stopMotor();
-            latch.start();
+            RobotParts.winchM.stopMotor(); //Stops the winch.
+            latch.start(); //Latches catapult.
+            done = true; //Tell command to stop.
         }
         else{
             RobotParts.winchM.set(winch);
@@ -37,7 +40,7 @@ public class Winch extends CommandBase {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return RobotParts.cataLimIn.get();
+        return done; //Waits for catapult to be latched
     }
 
     // Called once after isFinished returns true
