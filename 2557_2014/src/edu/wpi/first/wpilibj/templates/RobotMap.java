@@ -21,10 +21,9 @@ public class RobotMap {
     public static final int intakeMP = 3; //Defines intake motor on port 3.
     public static final int winchMP = 4; //Defines winch motor on port 4.
     
-//Defines Digital ports.
-    public static final int arduino1P = 0; //Defines arduino 1 digital port.
-    public static final int arduino2P = 0; //Defines arduino 2 digital port.
+//Defines Digital Input ports.
     public static final int cataLimP = 1; //Defines catapult limit sensor digital port.
+    public static final int piP = 2; //Defines pi sensor digital port.
     
 //Defines Compressor ports.
     public static final int compressorAP = 14; //Defines compressor A port.
@@ -46,11 +45,17 @@ public class RobotMap {
     public static final int winchEnAP = 6; //Defines winch encoder A port.
     public static final int winchEnBP = 7; //Defines winch encoder B port.
     
-//Defines the Digital Output Ports
+//Defines the Digital Output Ports.
     public static final int ledFlash1P = 8;
     public static final int ledFlash2P = 9;
     public static final int ledFlash3P = 10;
     public static final int ledFlash4P = 11;
     public static final int ledFlash5P = 12;
-    
+//Defines the encoder values.
+    public static final int winchEnVal = 510;
+    public static final int autoLDriveEnVal = 3400;
+    public static final int autoRDriveEnVal = 3400;
+//Defines the autonomous drive motor values.
+    public static double autoLDriveVal = 1.0;
+    public static double autoRDriveVal = 1.0;
 }
