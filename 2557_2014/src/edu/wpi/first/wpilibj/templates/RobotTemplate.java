@@ -9,6 +9,8 @@ package edu.wpi.first.wpilibj.templates;
 
 
 import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
@@ -17,7 +19,7 @@ import edu.wpi.first.wpilibj.templates.commands.CommandBase;
 import edu.wpi.first.wpilibj.templates.commands.ExampleCommand;
 import edu.wpi.first.wpilibj.templates.commands.Latch;
 import edu.wpi.first.wpilibj.templates.commands.Winch;
-
+import edu.wpi.first.wpilibj.templates.commands.IntakeUp;
 /**
  * The VM is configured to automatically run this class, and to call the
  * functions corresponding to each mode, as described in the IterativeRobot
@@ -28,9 +30,12 @@ import edu.wpi.first.wpilibj.templates.commands.Winch;
 public class RobotTemplate extends IterativeRobot {
 
     Command autonomousCommand;
-    double winchVal = 1.0;
+    double winchVal = OI.rightJoy.getAxis(Joystick.AxisType.kY);
+    double autoDriveVal = 1.0;
     Command winchCom = new Winch(winchVal); //Command that latchs the 
     Command fireCataCom = new Latch(false); //Command that fires catapult.
+    Command intakeDown = new IntakeUp(false);
+    Command intakeUp = new IntakeUp(true);
     Command ledYlwCom = new ArmLights(1);
     Command ledBluCom = new ArmLights(2);
     Command ledRedCom = new ArmLights(3);
@@ -45,6 +50,7 @@ public class RobotTemplate extends IterativeRobot {
         // instantiate the command used for the autonomous period
         autonomousCommand = new ExampleCommand();
         RobotParts.compressor.start();
+        RobotParts.drive.setSafetyEnabled(false);
 
         // Initialize all subsystems
         CommandBase.init();
@@ -71,6 +77,36 @@ public class RobotTemplate extends IterativeRobot {
     public void autonomousPeriodic() {
         Scheduler.getInstance().run();
     }
+    public void autonomousContinuous(){
+        RobotParts.winchEn.start();
+        intakeDown.start();
+        RobotParts.leftDriveEn.reset();
+        RobotParts.rightDriveEn.reset();
+        RobotParts.leftDriveEn.start();
+        RobotParts.rightDriveEn.start();
+        while(RobotParts.leftDriveEn.get() >= -RobotMap.autoLDriveEnVal && RobotParts.rightDriveEn.get() <= RobotMap.autoRDriveEnVal){
+            RobotParts.drive.setLeftRightMotorOutputs(RobotMap.autoLDriveVal, RobotMap.autoRDriveVal);
+            if(RobotParts.leftDriveEn.get() > RobotParts.rightDriveEn.get()){
+                RobotMap.autoLDriveVal = RobotMap.autoLDriveVal - 0.1;
+                RobotMap.autoRDriveVal = RobotMap.autoRDriveVal + 0.1;
+            }
+            else if(RobotParts.leftDriveEn.get() < RobotParts.rightDriveEn.get()){
+                RobotMap.autoLDriveVal = RobotMap.autoLDriveVal + 0.1;
+                RobotMap.autoRDriveVal = RobotMap.autoRDriveVal - 0.1;
+            }
+            else{
+                RobotMap.autoLDriveVal = 1.0;
+                RobotMap.autoRDriveVal = 1.0;
+            }
+        }
+        RobotParts.drive.stopMotor();
+        Timer.delay(1);
+        while(RobotParts.latchCataSol.get()){
+            if(RobotParts.piIn.get()){
+                fireCataCom.start();
+            }
+        }
+    }
 
     public void teleopInit() {
 	// This makes sure that the autonomous stops running when
@@ -78,7 +114,6 @@ public class RobotTemplate extends IterativeRobot {
         // continue until interrupted by another command, remove
         // this line or comment it out.
         autonomousCommand.cancel();
-        RobotParts.compressor.start();
     }
 
     /**
