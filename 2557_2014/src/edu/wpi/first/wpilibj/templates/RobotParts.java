@@ -46,6 +46,7 @@ public class RobotParts {
     
 //Defines digital inputs by jobs.
     public static DigitalInput cataLimIn = new DigitalInput(RobotMap.cataLimP); //Defines sensor that detects catapult limit.
+    public static DigitalInput piIn = new DigitalInput(RobotMap.piP);
     
 //Defines digital ouputs based on jobs.
     public static DigitalOutput ledYlwOut = new DigitalOutput(RobotMap.ledFlash1P); //Defines led Yellow.
